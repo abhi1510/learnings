@@ -1,15 +1,22 @@
 from tkinter import *
-from tkinter import filedialog
-from PIL import ImageTk, Image
+from tkinter import filedialog, messagebox
 
 root = Tk()
+root.title('Sliders')
+root.geometry('400x400')
 
-def open():
-    global img
-    root.filename= filedialog.askopenfilename(initialdir='assets', title='Select file', filetypes=(('all files', '*.*'),))
-    img = ImageTk.PhotoImage(Image.open(root.filename))
-    Label(image=img).pack()
+vertical = Scale(root, from_=0, to=400)
+vertical.pack()
 
-Button(root, text='open file', command=open).pack(padx=20, pady=20)
+horizontal = Scale(root, from_=0, to=400, orient=HORIZONTAL)
+horizontal.pack()
+
+def resize():
+    if vertical.get() > 200 and horizontal.get() > 200:
+        root.geometry(f'{horizontal.get()}x{vertical.get()}')
+    else:
+        messagebox.showwarning('Warning', 'Window must be greater than 200x200')
+
+Button(root, text='resize window', command=resize).pack()
 
 root.mainloop()
