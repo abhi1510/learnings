@@ -85,8 +85,12 @@ def query_db():
     # Insert
     cur.execute('SELECT *, oid FROM addresses')
     records = cur.fetchall()
-    for record in records:
-        print(record)
+    row_num = 8
+    for row in records:
+        l_text = f'{row[0]} {row[1]} | Address: {row[2]}, {row[3]}, {row[4]} - {row[5]}'
+        Label(root, text=l_text).grid(row=row_num, column=0, columnspan=2, pady=5)
+        row_num += 1
+
 
     # Commit changes
     conn.commit()
@@ -96,10 +100,10 @@ def query_db():
 
 # Save Btn
 saveBtn = Button(root, text='Save Record', command=record_to_db)
-saveBtn.grid(row=6, column=0, columnspan=2, padx=10)
+saveBtn.grid(row=6, column=0, columnspan=2, ipadx=100)
 
 # Query Btn
 queryBtn = Button(root, text='Show Records', command=query_db)
-queryBtn.grid(row=7, column=0, columnspan=2, padx=10)
+queryBtn.grid(row=7, column=0, columnspan=2, ipadx=95)
 
 root.mainloop()

@@ -1,5 +1,8 @@
 *.bin
 sqlite3.db
+env
+*.sqlite3
+
 node_modules/
 package-lock.json
 # Byte-compiled / optimized / DLL files
