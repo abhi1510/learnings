@@ -6,6 +6,7 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { Assign2Component } from './assign2/assign2.component';
 import { FormsModule } from '@angular/forms';
+import { Assign3Component } from './assign3/assign3.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
     ServerComponent,
     ServersComponent,
     Assign2Component,
+    Assign3Component,
   ],
   imports: [
     BrowserModule, 

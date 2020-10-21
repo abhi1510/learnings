@@ -1,0 +1,11 @@
+<button 
+    class="btn btn-info"
+    (click)="onToggle()">Display Details</button>
+
+<p *ngIf="showDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, ipsum.</p>
+
+<div
+    *ngFor="let cl of clickLogs; let i=index"
+    [ngStyle]="{'backgroundColor': getBgColor(i)}"
+    [ngClass]="{'white-text': i >= 4}">{{i}} Clicked at {{ cl }}
+</div>
