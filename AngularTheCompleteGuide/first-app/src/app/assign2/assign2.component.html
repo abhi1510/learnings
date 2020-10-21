@@ -1,0 +1,12 @@
+<input 
+    type="text"
+    class="form-control"
+    style="width: 25%;"
+    [(ngModel)]="username">
+
+<p>{{ username }}</p>
+
+<button 
+    class="btn btn-danger"
+    [disabled]="username.length === 0"
+    (click)="username = ''">Reset</button>
