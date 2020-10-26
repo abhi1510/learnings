@@ -1,0 +1,23 @@
+<hr>
+<h4>Basic Directive</h4>
+<h3 appBasicHighlight>Styled with basic highlight directive</h3>
+
+<hr>
+<h4>Better Directive</h4>
+<h3 appBetterHighlight [highlightColor]="'red'">Hover over Me</h3>
+
+<hr>
+<h4>Custom Directive</h4>
+<div *appUnless="false">
+    This is a custom structural directive
+</div>
+
+<hr>
+<h4>Using ngSwitch</h4>
+<div [ngSwitch]="value">
+    <p *ngSwitchCase="5">Value is 5</p>
+    <p *ngSwitchCase="10">Value is 10</p>
+    <p *ngSwitchCase="15">Value is 15</p>
+    <p *ngSwitchCase="20">Value is 20</p>
+    <p *ngSwitchDefault>Default Value</p>
+</div>
