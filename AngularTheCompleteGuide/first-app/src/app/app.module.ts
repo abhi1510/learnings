@@ -11,6 +11,10 @@ import { Section7Component } from './section7/section7.component';
 import { BasicHighlightDirective } from './section7/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './section7/better-highlight/better-highlight.directive';
 import { UnlessDirective } from './section7/my-structural/unless.directive';
+import { Assign5Component } from './assign5/assign5.component';
+import { ActiveUsersComponent } from './assign5/active-users/active-users.component';
+import { InactiveUsersComponent } from './assign5/inactive-users/inactive-users.component';
+import { CounterService } from './services/counter.service';
 
 @NgModule({
   declarations: [
@@ -22,13 +26,16 @@ import { UnlessDirective } from './section7/my-structural/unless.directive';
     Section7Component,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    Assign5Component,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule, 
     FormsModule
   ],
-  providers: [],
+  providers: [CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

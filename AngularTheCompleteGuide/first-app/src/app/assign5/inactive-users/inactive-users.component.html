@@ -1,0 +1,10 @@
+<ul class="list-group">
+    <li 
+        *ngFor="let user of inactiveUsers"
+        class="list-group-item">
+        {{user.name}} 
+        <button 
+            class="btn btn-light btn-sm"
+            (click)="setToActive(user.name)">Set to active</button>
+    </li>
+</ul>
