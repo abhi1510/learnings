@@ -15,6 +15,8 @@ import { Assign5Component } from './assign5/assign5.component';
 import { ActiveUsersComponent } from './assign5/active-users/active-users.component';
 import { InactiveUsersComponent } from './assign5/inactive-users/inactive-users.component';
 import { CounterService } from './services/counter.service';
+import { TdFormsComponent } from './td-forms/td-forms.component';
+import { Assign6Component } from './assign6/assign6.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CounterService } from './services/counter.service';
     UnlessDirective,
     Assign5Component,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    TdFormsComponent,
+    Assign6Component
   ],
   imports: [
     BrowserModule, 
