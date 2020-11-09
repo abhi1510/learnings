@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -17,6 +18,9 @@ import { InactiveUsersComponent } from './assign5/inactive-users/inactive-users.
 import { CounterService } from './services/counter.service';
 import { TdFormsComponent } from './td-forms/td-forms.component';
 import { Assign6Component } from './assign6/assign6.component';
+import { HttpFirebaseComponent } from './http-firebase/http-firebase.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { ShortenPipe } from './shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -33,11 +37,15 @@ import { Assign6Component } from './assign6/assign6.component';
     ActiveUsersComponent,
     InactiveUsersComponent,
     TdFormsComponent,
-    Assign6Component
+    Assign6Component,
+    HttpFirebaseComponent,
+    PipesComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule, 
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [CounterService],
   bootstrap: [AppComponent]
