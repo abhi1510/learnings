@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 import { map } from 'rxjs/operators';
+import { Post } from '../post.model';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-http-firebase',
@@ -10,38 +11,40 @@ import { map } from 'rxjs/operators';
 })
 export class HttpFirebaseComponent implements OnInit {
 
-  loadedPosts: [];
+  loadedPosts: Post[] = [];
+  isFetching: boolean = false;
+  error = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.fetchPosts();
+    this.isFetching = true;
+    this.postService.fetchPosts().subscribe(posts => {
+      this.isFetching = false;
+      this.loadedPosts = posts;
+    }, error => {
+      this.error = error.message;
+    })
   }
 
-  onCreatePost(postData: {title: string, content: string}) {
-    this.http.post(
-      'https://ng-backend-1da90.firebaseio.com/posts.json', 
-      postData).subscribe(responseData => {
-        console.log(responseData);
-      });
+  onCreatePost(postData: Post) {
+    this.postService.createAndStorePost(postData.title, postData.content)
   }
 
   onFetchPosts() {
-    this.fetchPosts();
+    this.isFetching = true;
+    this.postService.fetchPosts().subscribe(posts => {
+      this.isFetching = false;
+      this.loadedPosts = posts;
+    }, error => {
+      this.error = error.message;
+    })
   }
 
-  private fetchPosts() {
-    this.http.get('https://ng-backend-1da90.firebaseio.com/posts.json')
-      .pipe(map(resData => {
-        const postArray = [];
-        for(const key in resData) {
-          postArray.push({...resData[key], id: key})
-        }
-        return postArray;
-      }))
-      .subscribe(posts => {
-        console.log(posts);
-      })
+  clearPosts() {
+    this.postService.deletePosts().subscribe(() => {
+      this.loadedPosts = [];
+    })
   }
 
 }

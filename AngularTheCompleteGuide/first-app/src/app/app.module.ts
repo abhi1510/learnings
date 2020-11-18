@@ -21,6 +21,8 @@ import { Assign6Component } from './assign6/assign6.component';
 import { HttpFirebaseComponent } from './http-firebase/http-firebase.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ShortenPipe } from './shorten.pipe';
+import { Assign8Component } from './assign8/assign8.component';
+import { ReversePipe } from './reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ShortenPipe } from './shorten.pipe';
     Assign6Component,
     HttpFirebaseComponent,
     PipesComponent,
-    ShortenPipe
+    ShortenPipe,
+    Assign8Component,
+    ReversePipe
   ],
   imports: [
     BrowserModule, 
