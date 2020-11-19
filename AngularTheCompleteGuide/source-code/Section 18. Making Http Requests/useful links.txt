@@ -1,0 +1,5 @@
+Securing JS Code
+https://academind.com/learn/javascript/hide-javascript-code/
+
+Building a REST API
+https://academind.com/learn/node-js/building-a-restful-api-with/
