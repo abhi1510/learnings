@@ -23,6 +23,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { ShortenPipe } from './shorten.pipe';
 import { Assign8Component } from './assign8/assign8.component';
 import { ReversePipe } from './reverse.pipe';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ReversePipe } from './reverse.pipe';
     PipesComponent,
     ShortenPipe,
     Assign8Component,
-    ReversePipe
+    ReversePipe,
+    AuthComponent
   ],
   imports: [
     BrowserModule, 
